@@ -1,5 +1,6 @@
 var express = require('express')
 var app = express()
+const PORT = process.env.PORT || 3000;
 const server = require("http").createServer(app);
 var cors = require('cors')
 
@@ -14,7 +15,6 @@ const io = require('socket.io')(server,{
 });
 
 app.use(cors());
-const PORT = process.env.PORT || 3000;
 
 app.get('/',(req,res)=>{
     res.send('Server is running');
